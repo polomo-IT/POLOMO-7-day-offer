@@ -1,0 +1,6 @@
+{
+  "name": "POLOMO - Speak-Without-Fear Sprint",
+  "description": "POLOMO (Unshakable Presence) 30-Day Speak-Without-Fear Sprint with 7-Day Free Trial (₦0 tuition).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

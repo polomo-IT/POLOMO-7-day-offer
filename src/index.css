@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Fraunces', Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-condensed: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --color-polomo-red: #F9000E;
+  --color-polomo-red-hover: #D6000C;
+  --color-polomo-black: #0B0B10;
+  --color-canvas-stone: #F6F7F9;
+  --color-card-white: #FFFFFF;
+  --color-surface-ruby: #FFF1F2;
+  --color-accent-amber: #FFA300;
+  --color-ink-muted: #4F4F60;
+  --color-deco-green: #16AB59;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #F6F7F9;
+  color: #0B0B10;
+}
+
+::selection {
+  background-color: #F9000E;
+  color: #FFFFFF;
+}
+
+/* Custom font utilities matching user reference (Feijoa + Founders Grotesk X-Condensed) */
+.font-display-serif {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+.font-condensed {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+/* POLOMO signature SuperHi hard-offset shadow utilities */
+.shadow-superhi-sm {
+  box-shadow: 2px 2px 0px #0B0B10;
+}
+
+.shadow-superhi {
+  box-shadow: 4px 4px 0px #0B0B10;
+}
+
+.shadow-superhi-lg {
+  box-shadow: 6px 6px 0px #0B0B10;
+}
+
+.shadow-superhi-xl {
+  box-shadow: 8px 8px 0px #0B0B10;
+}
+
+.shadow-superhi-hover {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.shadow-superhi-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #0B0B10;
+}
+
+.shadow-superhi-hover:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #0B0B10;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
+@keyframes bounceGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce-gentle {
+  animation: bounceGentle 4s ease-in-out infinite;
+}
+
