@@ -41,21 +41,6 @@ export const Hero: React.FC<HeroProps> = ({ onClaimSeat, onLearnMore }) => {
         aria-hidden="true"
       />
 
-      {/* Center Floating Badge */}
-      <div
-        className="absolute top-14 sm:top-18 right-1/4 pointer-events-none z-0 hidden xl:flex items-center gap-2 bg-white/95 backdrop-blur-xs px-3 py-1 rounded-xl border border-[#0B0B10] shadow-superhi-sm animate-bounce-gentle"
-        style={{ animationDuration: '4s' }}
-        aria-hidden="true"
-      >
-        <img
-          src="/assets/FAvicon%20Polomo.png"
-          alt=""
-          className="w-5 h-4 object-contain"
-        />
-        <span className="font-condensed text-[11px] uppercase tracking-wider font-extrabold text-[#0B0B10]">
-          UNSHAKABLE PRESENCE
-        </span>
-      </div>
 
       {/* ------------------------------------------------------------- */}
       {/* COMPACT, ABOVE-THE-FOLD HERO CONTENT                          */}
@@ -76,7 +61,7 @@ export const Hero: React.FC<HeroProps> = ({ onClaimSeat, onLearnMore }) => {
         </h1>
 
         {/* Supporting Copy - Refined Measure and Spacing */}
-        <p className="text-base sm:text-lg md:text-xl text-[#4F4F60] max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-7 font-normal">
+        <p className="font-condensed text-base sm:text-lg md:text-xl text-[#4F4F60] max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-7 font-normal">
           Build your confidence through daily speaking practice, a supportive 10-person pod, dedicated coach feedback, and a live speaking arena. Start with seven days of structured practice, completely free.
         </p>
 

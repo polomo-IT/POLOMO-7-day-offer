@@ -31,54 +31,54 @@ export const SmallGroupFormat: React.FC = () => {
   ];
 
   return (
-    <section id="why-pods" className="py-20 sm:py-28 bg-[#F6F7F9] relative scroll-mt-20">
+    <section id="why-pods" className="py-10 sm:py-14 bg-[#F6F7F9] relative scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-block font-condensed text-xs uppercase tracking-widest text-[#F9000E] font-bold mb-3">
+        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
+          <div className="inline-block font-condensed text-xs uppercase tracking-widest text-[#F9000E] font-bold mb-2">
             THE POD ADVANTAGE
           </div>
           <h2
-            className="font-display-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#0B0B10] tracking-tight leading-tight mb-5 uppercase"
+            className="font-display-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0B0B10] tracking-tight leading-tight mb-3 uppercase"
             style={{ textWrap: 'balance' }}
           >
             You Do Not Have to Figure It Out Alone.
           </h2>
-          <p className="text-base sm:text-lg text-[#4F4F60] leading-relaxed">
+          <p className="font-condensed text-base sm:text-lg text-[#4F4F60] leading-relaxed">
             Confidence does not develop from watching lectures in isolation. It grows when you practise inside a structured, supportive group where repetition feels safe.
           </p>
         </div>
 
-        {/* 3 Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        {/* 3 Pillars Grid with User's .feature-grid */}
+        <div className="feature-grid items-stretch">
           {pillars.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="bg-[#FFFFFF] border border-[#0B0B10]/15 rounded-3xl p-8 flex flex-col justify-between shadow-superhi shadow-superhi-hover transition-all"
+                className="bg-[#FFFFFF] border border-[#0B0B10]/15 rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-superhi shadow-superhi-hover transition-all"
               >
                 <div>
-                  <div className="flex items-center justify-between gap-4 mb-6">
+                  <div className="flex items-center justify-between gap-4 mb-4">
                     <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center border border-[#0B0B10]/15"
+                      className="w-10 h-10 rounded-xl flex items-center justify-center border border-[#0B0B10]/15"
                       style={{ backgroundColor: item.accentBg }}
                     >
-                      <Icon className="w-6 h-6 text-[#0B0B10]" />
+                      <Icon className="w-5 h-5 text-[#0B0B10]" />
                     </div>
-                    <div>{item.shape}</div>
+                    <div className="scale-90 origin-right">{item.shape}</div>
                   </div>
 
-                  <h3 className="font-display-serif text-xl sm:text-2xl font-semibold text-[#0B0B10] mb-4 uppercase">
+                  <h3 className="font-display-serif text-lg sm:text-xl font-semibold text-[#0B0B10] mb-2 uppercase">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-[#4F4F60] leading-relaxed">
+                  <p className="font-condensed text-sm sm:text-base text-[#4F4F60] leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-[#0B0B10]/10 font-condensed uppercase tracking-wider text-xs text-[#4F4F60]">
+                <div className="mt-5 pt-3 border-t border-[#0B0B10]/10 font-condensed uppercase tracking-wider text-[11px] text-[#4F4F60]">
                   Safe Practice Environment · Zero Mockery
                 </div>
               </div>
@@ -87,8 +87,8 @@ export const SmallGroupFormat: React.FC = () => {
         </div>
 
         {/* Realistic Expectations Box */}
-        <div className="mt-12 bg-white border border-[#0B0B10]/15 rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto shadow-superhi-sm text-center">
-          <p className="text-sm sm:text-base text-[#0B0B10] font-medium leading-relaxed">
+        <div className="mt-8 sm:mt-10 bg-white border border-[#0B0B10]/15 rounded-xl p-4 sm:p-5 max-w-3xl mx-auto shadow-superhi-sm text-center">
+          <p className="font-condensed text-sm sm:text-base text-[#0B0B10] font-medium leading-relaxed">
             <span className="font-bold text-[#F9000E]">POLOMO Standard:</span> We do not promise that speaking fear vanishes overnight without effort. What this 7-day trial provides is a proven, structured method to step into every speaking opportunity with steady tools, continuous feedback, and unshakable presence.
           </p>
         </div>

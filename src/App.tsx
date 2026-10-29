@@ -39,7 +39,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F6F7F9] text-[#0B0B10] flex flex-col font-sans selection:bg-[#F9000E] selection:text-white">
+    <div className="min-h-screen bg-[#F6F7F9] text-[#0B0B10] flex flex-col font-sans selection:bg-[#F9000E] selection:text-white overflow-x-hidden">
       {/* SECTION 1: Announcement Ticker */}
       <AnnouncementTicker />
 
