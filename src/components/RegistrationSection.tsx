@@ -91,13 +91,15 @@ export const RegistrationSection: React.FC = () => {
     }
   };
 
+const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq';
+
   return (
     <section id="register" className="py-10 sm:py-14 bg-[#FFFFFF] border-y border-[#0B0B10]/10 relative scroll-mt-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
           <div className="inline-block font-condensed text-xs uppercase tracking-widest text-[#F9000E] font-bold mb-2">
-            SEAT RESERVATION
+            STEP 1 OF 2 · QUALIFY & RESERVE YOUR SPOT
           </div>
           <h2
             className="font-display-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0B0B10] tracking-tight leading-tight mb-3 uppercase"
@@ -141,13 +143,13 @@ export const RegistrationSection: React.FC = () => {
             <form onSubmit={handleSubmit} noValidate className="max-w-xl mx-auto space-y-4">
               <div className="text-center mb-5">
                 <span className="inline-block font-condensed text-[11px] uppercase tracking-widest text-white bg-[#0B0B10] px-3 py-0.5 rounded-full font-bold mb-1.5 shadow-superhi-sm">
-                  POLOMO TRIAL APPLICATION
+                  STEP 1 OF 2 · QUALIFY YOUR SEAT
                 </span>
                 <h3 className="font-display-serif text-xl sm:text-2xl font-semibold text-[#0B0B10] uppercase">
                   Claim Your Free Trial Seat
                 </h3>
                 <p className="font-condensed text-[11px] uppercase tracking-wide text-[#4F4F60] mt-0.5">
-                  (Start your seven-day trial for ₦0. No credit card required.)
+                  (Start your seven-day trial for ₦0. Direct entry into the WhatsApp Community.)
                 </p>
               </div>
 
@@ -171,7 +173,7 @@ export const RegistrationSection: React.FC = () => {
                   />
                 </div>
                 {errors.fullName && (
-                  <p className="mt-1 text-xs text-[#F9000E] flex items-center gap-1 font-medium">
+                  <p className="mt-1 text-xs text-[#F9000E] flex items-center gap-1 font-medium font-condensed">
                     <AlertCircle className="w-3.5 h-3.5" />
                     <span>{errors.fullName}</span>
                   </p>
@@ -225,7 +227,7 @@ export const RegistrationSection: React.FC = () => {
                   />
                 </div>
                 <p className="mt-1 font-condensed text-xs text-[#4F4F60]">
-                  Your coach will communicate daily drill prompts and live links via your dedicated pod channel.
+                  Used to verify your entry into the POLOMO Unshakable Presence Community.
                 </p>
                 {errors.phone && (
                   <p className="mt-1 font-condensed text-xs text-[#F9000E] flex items-center gap-1 font-medium">
@@ -234,7 +236,6 @@ export const RegistrationSection: React.FC = () => {
                   </p>
                 )}
               </div>
-
 
               {/* Primary Challenge */}
               <div>
@@ -260,116 +261,216 @@ export const RegistrationSection: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 sm:py-3.5 px-6 rounded-full bg-[#F9000E] hover:bg-[#D6000C] active:scale-[0.98] disabled:opacity-60 text-white font-condensed uppercase tracking-wider font-bold text-sm sm:text-base shadow-superhi hover:shadow-superhi-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3.5 sm:py-4 px-6 rounded-full bg-[#F9000E] hover:bg-[#D6000C] active:scale-[0.98] disabled:opacity-60 text-white font-condensed uppercase tracking-wider font-bold text-sm sm:text-base shadow-superhi hover:shadow-superhi-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   {isSubmitting ? (
                     <span className="inline-flex items-center gap-2">
                       <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      <span>Reserving Your Pod Seat...</span>
+                      <span>Verifying Seat Availability...</span>
                     </span>
                   ) : (
                     <>
-                      <span>Reserve My Free Pod Seat</span>
+                      <span>Reserve Spot & Unlock Community Link</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}
                 </button>
+                <p className="mt-2 text-center font-condensed text-xs text-[#4F4F60]">
+                  Immediate step 2: You will be redirected straight to join our WhatsApp community for instant onboarding.
+                </p>
               </div>
 
               {/* Footer Trust Markers */}
               <div className="flex flex-wrap items-center justify-center gap-3 font-condensed uppercase tracking-wider text-[11px] text-[#4F4F60] pt-1">
                 <span className="flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#16AB59]" />
-                  <span>No payment or card required</span>
+                  <span>No payment required</span>
                 </span>
                 <span aria-hidden="true">·</span>
-                <span>Immediate confirmation</span>
+                <span>Direct WhatsApp Onboarding</span>
                 <span aria-hidden="true">·</span>
                 <span>Strict 10-person pod cap</span>
               </div>
             </form>
           ) : (
-            /* Confirmation State with POLOMO Digital Admission Ticket */
-            <div className="max-w-xl mx-auto py-2 text-center">
-              <div className="w-12 h-12 rounded-full bg-[#F9000E] text-white flex items-center justify-center mx-auto mb-4 shadow-superhi">
-                <CheckCircle2 className="w-7 h-7" />
-              </div>
+            /* Confirmation State: Concept 1 — Executive Memo & Tactile WhatsApp Pass */
+            <div className="py-1">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+                {/* Left Column: Personal Executive Memo from Coaching Leads */}
+                <div className="lg:col-span-7 text-left space-y-5">
+                  <div>
+                    <div className="inline-flex items-center gap-2 bg-[#25D366]/15 border border-[#25D366]/40 px-3 py-1 rounded-full mb-3 shadow-superhi-sm">
+                      <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                      <span className="font-condensed text-[11px] uppercase tracking-widest text-[#0B0B10] font-bold">
+                        COHORT ONBOARDING · STEP 2 OF 2
+                      </span>
+                    </div>
 
-              <span className="font-condensed text-[11px] uppercase tracking-widest text-[#F9000E] font-bold bg-[#FFF1F2] px-3 py-0.5 rounded-full border border-[#F9000E]/20">
-                POLOMO COHORT ADMISSION CONFIRMED
-              </span>
+                    <h3 className="font-display-serif text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#0B0B10] tracking-tight leading-tight">
+                      You’re officially on the roster, {submittedData?.fullName}.
+                    </h3>
 
-              <h3 className="font-display-serif text-2xl sm:text-3xl font-semibold text-[#0B0B10] mt-2 mb-2 uppercase">
-                Welcome to the Pod, {submittedData?.fullName}!
-              </h3>
+                    <p className="font-condensed text-base sm:text-lg text-[#333340] mt-2.5 leading-relaxed">
+                      Your ₦0 trial seat has been logged in our cohort registry. We deliberately avoid lengthy automated email sequences—speaking presence isn’t built reading inboxes, it is forged through real voice interaction, peer momentum, and direct coach feedback.
+                    </p>
+                  </div>
 
-              <p className="font-condensed text-sm sm:text-base text-[#4F4F60] mb-6 max-w-lg mx-auto">
-                Your free seat has been officially allocated for the upcoming 7-Day Sprint. We have sent your onboarding details to <strong className="text-[#0B0B10]">{submittedData?.email}</strong>.
-              </p>
+                  {/* 3 Structured Community Pillars */}
+                  <div className="space-y-3 pt-1 border-t border-[#0B0B10]/10">
+                    <div className="flex items-start gap-3 bg-white border border-[#0B0B10]/15 rounded-xl p-3.5 shadow-superhi-sm">
+                      <div className="w-8 h-8 rounded-lg bg-[#FFA300]/20 text-[#0B0B10] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
+                        01
+                      </div>
+                      <div>
+                        <h4 className="font-display-serif text-sm sm:text-base font-semibold uppercase text-[#0B0B10]">
+                          Weekly Live AMAs with Coaching Leads
+                        </h4>
+                        <p className="font-condensed text-xs sm:text-sm text-[#4F4F60] leading-relaxed mt-0.5">
+                          Direct answers on meeting anxiety, pitch preparation, and handling impromptu questions under pressure.
+                        </p>
+                      </div>
+                    </div>
 
-              {/* POLOMO Admission Ticket Card */}
-              <div className="bg-white border-2 border-[#0B0B10] rounded-xl p-4 sm:p-6 text-left shadow-superhi mb-6 relative">
-                <div className="flex items-center justify-between border-b border-[#0B0B10]/10 pb-3 mb-3">
-                  <div className="flex items-center gap-2.5">
-                    <img
-                      src="/assets/black_transparent%20logo-1.png"
-                      alt="POLOMO - Unshakable Presence Logo"
-                      width="1537"
-                      height="1023"
-                      style={{ aspectRatio: '1537 / 1023' }}
-                      className="h-7 sm:h-8 w-auto object-contain"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div>
-                      <span className="font-condensed text-[10px] uppercase tracking-wider text-[#4F4F60] block">Assigned Cohort Pod</span>
-                      <strong className="font-display-serif text-sm sm:text-base text-[#F9000E] font-semibold uppercase">
-                        50-Seat Cohort · 10-Person Pod
-                      </strong>
+                    <div className="flex items-start gap-3 bg-white border border-[#0B0B10]/15 rounded-xl p-3.5 shadow-superhi-sm">
+                      <div className="w-8 h-8 rounded-lg bg-[#F9000E]/15 text-[#F9000E] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
+                        02
+                      </div>
+                      <div>
+                        <h4 className="font-display-serif text-sm sm:text-base font-semibold uppercase text-[#0B0B10]">
+                          Daily 60–90 Second Vocal Micro-Exercises
+                        </h4>
+                        <p className="font-condensed text-xs sm:text-sm text-[#4F4F60] leading-relaxed mt-0.5">
+                          Frictionless daily audio prompts and practice reps designed to condition vocal composure without overwhelm.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 bg-white border border-[#0B0B10]/15 rounded-xl p-3.5 shadow-superhi-sm">
+                      <div className="w-8 h-8 rounded-lg bg-[#25D366]/20 text-[#0B0B10] flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
+                        03
+                      </div>
+                      <div>
+                        <h4 className="font-display-serif text-sm sm:text-base font-semibold uppercase text-[#0B0B10]">
+                          Personal Community Manager Welcome
+                        </h4>
+                        <p className="font-condensed text-xs sm:text-sm text-[#4F4F60] leading-relaxed mt-0.5">
+                          Our community team is inside the group now to greet you, answer onboarding queries, and orient your pod.
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <span className="font-condensed text-[11px] font-bold bg-[#FFA300] text-[#0B0B10] px-2.5 py-0.5 rounded-full border border-[#0B0B10]/20 uppercase tracking-wider">
-                    ₦0 TRIAL SEAT
-                  </span>
-                </div>
 
-                <div className="space-y-2 font-condensed text-sm sm:text-base text-[#4F4F60]">
-                  <div className="flex justify-between">
-                    <span>Participant:</span>
-                    <strong className="text-[#0B0B10]">{submittedData?.fullName}</strong>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>WhatsApp:</span>
-                    <strong className="text-[#0B0B10]">{submittedData?.phone}</strong>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Capacity Allocated:</span>
-                    <strong className="text-[#0B0B10]">1 of 10 seats in pod</strong>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>What to Expect Next:</span>
-                    <strong className="text-[#0B0B10]">Pod invite link delivered 24h before Day 1</strong>
+                  {/* Coach Signature Note */}
+                  <div className="flex items-center gap-3 pt-2 text-[#4F4F60] font-condensed">
+                    <div className="w-10 h-10 rounded-full bg-[#0B0B10] text-white flex items-center justify-center font-display-serif font-bold text-sm shadow-superhi-sm shrink-0">
+                      P
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-wider text-[#0B0B10] font-bold">
+                        POLOMO Coaching Leads
+                      </p>
+                      <p className="text-xs text-[#6B7280]">
+                        Unshakable Presence Initiative · 50-Seat Cohort Pods
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#0B0B10]/10 bg-[#FFF5F5] -mx-4 -mb-4 p-3 rounded-b-lg text-center font-condensed uppercase tracking-wider text-[11px] text-[#0B0B10] font-semibold">
-                  Bonus materials (Panic Killer Protocol & 5-Minute Habit Blueprint) will be unlocked inside your POLOMO pod space.
-                </div>
-              </div>
+                {/* Right Column: Tactile WhatsApp Admission Pass & Single Clear Action */}
+                <div className="lg:col-span-5 text-left">
+                  <div className="bg-white border-2 border-[#0B0B10] rounded-2xl p-5 sm:p-6 shadow-superhi relative">
+                    {/* Pass Header */}
+                    <div className="flex items-center justify-between border-b border-[#0B0B10]/10 pb-3.5 mb-4">
+                      <div className="flex items-center gap-2">
+                        <img
+                          src="/assets/black_transparent%20logo-1.png"
+                          alt="POLOMO Logo"
+                          width="1537"
+                          height="1023"
+                          style={{ aspectRatio: '1537 / 1023' }}
+                          className="h-7 w-auto object-contain"
+                          referrerPolicy="no-referrer"
+                        />
+                        <span className="font-condensed text-xs uppercase tracking-wider text-[#4F4F60] font-bold">
+                          ADMISSION PASS
+                        </span>
+                      </div>
+                      <span className="font-condensed text-[11px] font-bold bg-[#FFA300] text-[#0B0B10] px-2.5 py-0.5 rounded-full border border-[#0B0B10]/20 uppercase tracking-wider">
+                        ₦0 FREE TRIAL
+                      </span>
+                    </div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <button
-                  type="button"
-                  onClick={() => setIsSubmitted(false)}
-                  className="px-5 py-2.5 font-condensed uppercase tracking-wider text-xs font-bold text-[#0B0B10] bg-white border border-[#0B0B10]/20 rounded-full shadow-superhi-sm hover:shadow-superhi transition-all cursor-pointer"
-                >
-                  Edit Registration Details
-                </button>
-                <a
-                  href="#how-it-works"
-                  className="px-5 py-2.5 font-condensed uppercase tracking-wider text-xs font-bold text-white bg-[#F9000E] hover:bg-[#D6000C] rounded-full shadow-superhi-sm hover:shadow-superhi transition-all"
-                >
-                  Review Trial Schedule
-                </a>
+                    {/* Group Title */}
+                    <div className="mb-4">
+                      <span className="font-condensed text-[10px] uppercase tracking-wider text-[#6B7280] block">
+                        Assigned WhatsApp Community
+                      </span>
+                      <strong className="font-display-serif text-base sm:text-lg text-[#0B0B10] font-bold uppercase block leading-snug">
+                        POLOMO Unshakable Presence Community
+                      </strong>
+                    </div>
+
+                    {/* Registrant Meta Details */}
+                    <div className="space-y-2.5 font-condensed text-xs sm:text-sm text-[#4F4F60] border-t border-b border-[#0B0B10]/10 py-3 mb-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[#6B7280]">Participant:</span>
+                        <strong className="text-[#0B0B10] font-bold">{submittedData?.fullName}</strong>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-[#6B7280]">WhatsApp Number:</span>
+                        <strong className="text-[#0B0B10] font-bold">{submittedData?.phone}</strong>
+                      </div>
+                      <div className="flex justify-between items-start gap-2">
+                        <span className="text-[#6B7280] shrink-0">Focus Hurdle:</span>
+                        <strong className="text-[#0B0B10] font-medium text-right text-xs truncate max-w-[65%]">
+                          {submittedData?.challenge}
+                        </strong>
+                      </div>
+                      <div className="flex justify-between items-center pt-0.5">
+                        <span className="text-[#6B7280]">Room Status:</span>
+                        <span className="inline-flex items-center gap-1.5 font-bold text-[#16AB59] bg-[#16AB59]/10 px-2 py-0.5 rounded-full text-xs">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#16AB59] animate-ping" />
+                          Awaiting Your Entry
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Pinned Resource Callout */}
+                    <div className="bg-[#FFF9EA] border border-[#FFA300]/40 rounded-xl p-3 mb-4 text-xs font-condensed text-[#664600] leading-relaxed">
+                      <span className="font-bold text-[#0B0B10] block mb-0.5">
+                        📌 PINNED INSIDE THE COMMUNITY:
+                      </span>
+                      Your <em>Panic Killer Protocol</em> & <em>5-Minute Habit Blueprint</em> are waiting in the group description.
+                    </div>
+
+                    {/* Primary CTA Button */}
+                    <a
+                      href={WHATSAPP_COMMUNITY_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-3.5 sm:py-4 px-5 rounded-full bg-[#25D366] hover:bg-[#20BA5A] active:scale-[0.98] text-[#0B0B10] font-condensed uppercase tracking-wider font-extrabold text-sm sm:text-base shadow-superhi hover:shadow-superhi-lg transition-all flex items-center justify-center gap-2.5 border-2 border-[#0B0B10] cursor-pointer"
+                    >
+                      <svg className="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+                        <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.182 8.182 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.12.82.83-3.04-.19-.3a8.196 8.196 0 0 1-1.25-4.47c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3" />
+                      </svg>
+                      <span>Join WhatsApp Community →</span>
+                    </a>
+
+                    <p className="mt-2 text-center font-condensed text-[11px] text-[#6B7280]">
+                      Community managers will greet you and confirm your pod assignment.
+                    </p>
+
+                    <div className="mt-4 pt-3 border-t border-[#0B0B10]/10 text-center">
+                      <button
+                        type="button"
+                        onClick={() => setIsSubmitted(false)}
+                        className="font-condensed uppercase tracking-wider text-xs font-bold text-[#6B7280] hover:text-[#0B0B10] underline underline-offset-4 cursor-pointer"
+                      >
+                        Edit Your Information
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
