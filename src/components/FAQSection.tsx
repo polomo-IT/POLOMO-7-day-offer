@@ -11,34 +11,34 @@ export const FAQSection: React.FC = () => {
 
   const faqs: FAQItem[] = [
     {
-      question: 'Is the seven-day trial really free?',
+      question: 'What if I am too shy to speak?',
       answer:
-        'Yes. Registration for the seven-day trial is ₦0. You are not required to enter a credit card or commit to any mandatory payments to claim your seat and participate in your coaching pod.',
+        'Then this is built for you. Your first seat can be an observing seat, and you join in when you are ready. Nobody is ever forced to speak before they are ready.',
     },
     {
-      question: 'What if I am terrified of speaking in public?',
+      question: 'What if I do not want to be on camera?',
       answer:
-        'That is exactly who this programme is designed for. You will not be pushed onto a stage on day one. You will begin with short, private 60–90-second speaking micro-reps, work in a supportive 10-person pod of peers dealing with similar anxiety, and receive direct, constructive guidance from your dedicated coach.',
+        'There is an audio-only option. You can participate fully with microphone only whenever your network is limited or you prefer not to use video.',
     },
     {
-      question: 'How much time will I need each day?',
+      question: 'How much time do I need?',
       answer:
-        'The core daily exercises take approximately 60–90 seconds to complete. During the week, you will also take part in two live pod practice drills with your coach and peers, followed by the live 50-person speaking arena at the end of Day 7.',
+        'A daily rep of about 5–10 minutes, two 30-minute pod sessions, and the weekend session each week.',
     },
     {
-      question: 'What happens during the seven days?',
+      question: 'What if I miss a session?',
       answer:
-        'Throughout the seven days, you complete daily speaking micro-reps designed to build repetition without overwhelm. You participate in two live pod practice drills to test your progress in a small group setting, receive direct feedback from your pod coach, and culminate in the weekend speaking arena.',
+        'The 24-hour catch-up pack helps you catch up so you never lose momentum or fall behind your pod.',
     },
     {
-      question: 'How many people can join?',
+      question: 'What if I do not improve?',
       answer:
-        'The cohort is capped at 50 participants total, strictly distributed across five coaching pods of 10 participants each. Capping pod sizes ensures that every participant receives real speaking turns and individual coach attention.',
+        'Under our Speaking Confidence Progress Guarantee, eligible members who take part and need more time can receive up to two additional weeks of guided support at no extra cost.',
     },
     {
-      question: 'What happens after the free trial?',
+      question: 'Why pay when free videos exist?',
       answer:
-        'The seven-day trial is an opportunity to experience the POLOMO methodology, pod dynamics, and coach feedback firsthand with zero obligation. Details regarding continuation in the broader 30-Day Sprint will be shared with cohort participants near the completion of the trial period.',
+        'Free videos cannot sit in a room with you while you try it. You get live practice, a pod, a facilitator, a progress log, five bonuses and three months of alumni access.',
     },
   ];
 
@@ -61,7 +61,7 @@ export const FAQSection: React.FC = () => {
             Frequently Asked Questions
           </h2>
           <p className="font-condensed text-base sm:text-lg text-[#4F4F60]">
-            Clear, straightforward answers about the 7-day trial, pod structure, and participation.
+            Clear, straightforward answers about the 30-day sprint, pod structure, and participation.
           </p>
         </div>
 

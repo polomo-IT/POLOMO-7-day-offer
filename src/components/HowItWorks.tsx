@@ -6,12 +6,12 @@ export const HowItWorks: React.FC = () => {
   const steps = [
     {
       step: '01',
-      title: 'Your 10-Person Pod',
+      title: 'Join Your Pod',
       icon: Users2,
       color: '#F9000E',
       description:
-        'Join a small practice group with nine other participants and a dedicated coach. Build familiarity and practise in a more supportive environment.',
-      highlight: 'Dedicated Pod Coach & 9 Peer Allies',
+        'You are placed in a pod of about 10 at a level that suits you, with a facilitator. Take your starting seat, speaking or watching.',
+      highlight: 'Pod of 10 · Facilitator · Speak or Watch',
       shape: <ArchShape className="w-9 h-11" color="#F9000E" />,
     },
     {
@@ -20,18 +20,18 @@ export const HowItWorks: React.FC = () => {
       icon: Clock3,
       color: '#FFA300',
       description:
-        'Complete short 60–90-second speaking exercises and take part in two live pod practice drills during the week.',
-      highlight: '60–90 Seconds + 2 Live Drills',
+        'Each day, one short prompt of 60–90 seconds. Say something out loud, then notice it went better than you feared. Twice a week, your pod meets live for a 30-minute session.',
+      highlight: '60–90s Daily Prompt + 2x 30-Min Live Sessions',
       shape: <AsteriskShape className="w-9 h-9" color="#FFA300" />,
     },
     {
       step: '03',
-      title: 'The Weekend Speaking Arena',
+      title: 'Weekend Speaking Room',
       icon: Trophy,
       color: '#16AB59',
       description:
-        'Put your practice into action in the 50-person live speaking arena at the end of Day 7.',
-      highlight: 'Safe Live Stage Milestones',
+        'Each weekend, the wider community comes together for warm-ups, small-group challenges, spontaneous speaking and reflection. Step into larger groups only when you feel ready.',
+      highlight: 'Wider Community Challenges & Reflection',
       shape: <CutCornerShape className="w-9 h-9" color="#16AB59" />,
     },
   ];
@@ -42,7 +42,7 @@ export const HowItWorks: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-2xl mx-auto text-center mb-8 sm:mb-10">
           <div className="inline-block font-condensed text-xs uppercase tracking-widest text-[#F9000E] font-bold mb-2">
-            THE 7-DAY PROGRESSION
+            HOW THE 30 DAYS WORK
           </div>
           <h2
             className="font-display-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0B0B10] tracking-tight leading-tight mb-3 uppercase"
@@ -51,11 +51,11 @@ export const HowItWorks: React.FC = () => {
             Small Practice. Real Progress. One Step at a Time.
           </h2>
           <p className="font-condensed text-base sm:text-lg text-[#4F4F60] leading-relaxed">
-            You do not have to start by speaking in front of a large audience. Begin with small practice sessions and build from there.
+            Every step is optional and paced for you. Nobody is ever forced to speak before they are ready.
           </p>
         </div>
 
-        {/* 3 Step Cards using user's .feature-grid */}
+        {/* 3 Step Cards */}
         <div className="feature-grid items-stretch">
           {steps.map((item) => {
             const Icon = item.icon;
@@ -94,7 +94,7 @@ export const HowItWorks: React.FC = () => {
 
         {/* Bottom Context Note */}
         <div className="mt-8 text-center font-condensed uppercase tracking-wider text-xs text-[#4F4F60] max-w-lg mx-auto">
-          Every drill is structured so that you never feel abandoned or pushed past your readiness level without coach guidance.
+          Every step is optional and paced for you. Observing is always a legitimate way to begin.
         </div>
       </div>
     </section>

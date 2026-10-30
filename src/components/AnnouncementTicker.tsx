@@ -2,14 +2,15 @@ import React from 'react';
 
 export const AnnouncementTicker: React.FC = () => {
   const tickerItems = [
-    'POLOMO 30-DAY SPRINT',
-    '50 FREE TRIAL SEATS',
-    '₦0 TO JOIN',
-    'UNSHAKABLE PRESENCE',
-    '5 COACHING PODS',
-    '10 PARTICIPANTS EACH',
-    '7-DAY TEST DRIVE',
-    'NO CREDIT CARD REQUIRED',
+    'POLOMO SPEAKUP LAB',
+    '30-DAY SPRINT',
+    '50 FOUNDING PLACES',
+    '₦20,000 ONE-TIME',
+    'ENROLMENT CLOSES 21 NOV 2026',
+    '5 PODS OF 10',
+    'OBSERVE FIRST IF YOU WANT',
+    'CORE STARTS 28 NOV 2026',
+    'NOBODY FORCED TO SPEAK',
   ];
 
   return (
@@ -23,11 +24,11 @@ export const AnnouncementTicker: React.FC = () => {
             {tickerItems.map((item, i) => (
               <span key={i} className="flex items-center font-condensed uppercase tracking-widest text-sm whitespace-nowrap">
                 <span className="text-[#FFA300] mx-3 text-base font-bold" aria-hidden="true">•</span>
-                {item === '₦0 TO JOIN' ? (
+                {item === '₦20,000 ONE-TIME' ? (
                   <span className="bg-[#F9000E] text-white font-extrabold px-2.5 py-0.5 rounded-full text-xs shadow-sm">
                     {item}
                   </span>
-                ) : item === 'POLOMO 30-DAY SPRINT' ? (
+                ) : item === 'POLOMO SPEAKUP LAB' || item === '30-DAY SPRINT' ? (
                   <span className="text-[#FFA300] font-bold">{item}</span>
                 ) : (
                   <span className="text-[#F6F7F9] font-medium">{item}</span>

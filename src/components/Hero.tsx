@@ -41,7 +41,6 @@ export const Hero: React.FC<HeroProps> = ({ onClaimSeat, onLearnMore }) => {
         aria-hidden="true"
       />
 
-
       {/* ------------------------------------------------------------- */}
       {/* COMPACT, ABOVE-THE-FOLD HERO CONTENT                          */}
       {/* ------------------------------------------------------------- */}
@@ -49,20 +48,20 @@ export const Hero: React.FC<HeroProps> = ({ onClaimSeat, onLearnMore }) => {
         {/* Eyebrow Label */}
         <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 font-condensed uppercase tracking-widest text-xs sm:text-sm text-[#0B0B10] font-bold bg-[#FFA300] px-3.5 py-1 rounded-full border border-[#0B0B10]/20 shadow-superhi-sm">
           <span className="w-2 h-2 rounded-full bg-[#F9000E]" aria-hidden="true" />
-          <span>100% FREE 7-DAY TEST DRIVE · POLOMO SPRINT</span>
+          <span>FOUNDING COHORT · 30-DAY POLOMO SPRINT</span>
         </div>
 
-        {/* Main Headline - Tight, Balanced 2-3 Line Flow */}
+        {/* Main Headline */}
         <h1
           className="font-display-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-semibold text-[#0B0B10] leading-[1.1] tracking-tight mb-3 sm:mb-4 uppercase"
           style={{ textWrap: 'balance' }}
         >
-          Stop Letting Public Speaking Anxiety Steal Your Rooms, Deals, and Promotions.
+          You Know What to Say. Now Practise Saying It.
         </h1>
 
-        {/* Supporting Copy - Refined Measure and Spacing */}
+        {/* Supporting Copy */}
         <p className="font-condensed text-base sm:text-lg md:text-xl text-[#4F4F60] max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-7 font-normal">
-          Build your confidence through daily speaking practice, a supportive 10-person pod, dedicated coach feedback, and a live speaking arena. Start with seven days of structured practice, completely free.
+          Thirty days of small, supported speaking practice in a pod of 10 people with a facilitator who keeps the room encouraging. Start at a level that suits you, or simply watch first.
         </p>
 
         {/* ------------------------------------------------------------- */}
@@ -84,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ onClaimSeat, onLearnMore }) => {
               onClick={onClaimSeat}
               className="w-full sm:w-auto px-7 sm:px-8 py-3.5 sm:py-4 font-condensed uppercase tracking-wider text-base sm:text-lg font-bold text-white bg-[#F9000E] hover:bg-[#D6000C] active:scale-[0.98] rounded-full shadow-superhi-lg hover:shadow-superhi-xl transition-all cursor-pointer flex items-center justify-center gap-2 group"
             >
-              <span>Claim Your Free Pod Seat — ₦0</span>
+              <span>Save My Place for ₦20,000</span>
               <ArrowDownRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform" />
             </button>
 
@@ -109,27 +108,27 @@ export const Hero: React.FC<HeroProps> = ({ onClaimSeat, onLearnMore }) => {
         {/* ------------------------------------------------------------- */}
         {/* TRUST INDICATORS & CONTEXT - COMPACT SINGLE ROW               */}
         {/* ------------------------------------------------------------- */}
-        <div className="pt-3 border-t border-[#0B0B10]/10 max-w-xl mx-auto">
+        <div className="pt-3 border-t border-[#0B0B10]/10 max-w-2xl mx-auto">
           <div className="flex flex-wrap items-center justify-center gap-y-1.5 gap-x-5 font-condensed uppercase tracking-wider text-xs sm:text-sm font-semibold text-[#4F4F60]">
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-[#16AB59]" />
-              <span>No credit card required</span>
+              <span>₦20,000 one-time</span>
             </div>
             <span className="text-[#0B0B10]/25 hidden sm:inline" aria-hidden="true">·</span>
             <div className="flex items-center gap-1.5">
               <Users className="w-4 h-4 text-[#F9000E]" />
-              <span>10 participants per coaching pod</span>
+              <span>Only 50 places · 5 pods of 10</span>
             </div>
             <span className="text-[#0B0B10]/25 hidden sm:inline" aria-hidden="true">·</span>
             <div className="flex items-center gap-1.5">
               <CalendarCheck2 className="w-4 h-4 text-[#FFA300]" />
-              <span>100% free seven-day trial</span>
+              <span>Enrolment closes 21 Nov 2026 · Core starts 28 Nov 2026</span>
             </div>
           </div>
 
-          {/* Compact Context Micro-line */}
-          <p className="mt-2 text-[11px] font-condensed uppercase tracking-wide text-[#4F4F60]/80">
-            (The 7-Day Free Trial introduces you to the core methods of the full 30-Day POLOMO Sprint. ₦0 to test drive.)
+          {/* Reassurance Tagline */}
+          <p className="mt-2 text-xs font-condensed uppercase tracking-wide text-[#0B0B10] font-bold">
+            Nobody is ever forced to speak before they are ready.
           </p>
         </div>
       </div>

@@ -25,13 +25,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
     if (!searchQuery.trim()) return;
     const q = searchQuery.toLowerCase();
     setSearchOpen(false);
-    if (q.includes('faq') || q.includes('question') || q.includes('cost') || q.includes('free')) {
+    if (q.includes('faq') || q.includes('question') || q.includes('cost') || q.includes('price')) {
       document.getElementById('faqs')?.scrollIntoView({ behavior: 'smooth' });
-    } else if (q.includes('step') || q.includes('work') || q.includes('drill') || q.includes('rep')) {
+    } else if (q.includes('step') || q.includes('work') || q.includes('rep') || q.includes('schedule')) {
       document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
-    } else if (q.includes('value') || q.includes('bonus') || q.includes('price') || q.includes('get')) {
+    } else if (q.includes('include') || q.includes('bonus') || q.includes('get') || q.includes('deliverable')) {
       document.getElementById('what-you-get')?.scrollIntoView({ behavior: 'smooth' });
-    } else if (q.includes('pod') || q.includes('coach') || q.includes('group')) {
+    } else if (q.includes('pod') || q.includes('coach') || q.includes('facilitator')) {
       document.getElementById('why-pods')?.scrollIntoView({ behavior: 'smooth' });
     } else {
       onClaimSeat();
@@ -53,11 +53,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className="flex items-center gap-2 shrink-0 group focus-visible:outline-hidden"
-              aria-label="POLOMO - Unshakable Presence Logo"
+              aria-label="POLOMO SpeakUp Lab Logo"
             >
               <img
                 src="/assets/FAvicon%20Polomo.png"
-                alt="POLOMO - Unshakable Presence Logo"
+                alt="POLOMO - SpeakUp Lab Logo"
                 width="799"
                 height="555"
                 style={{ aspectRatio: '799 / 555' }}
@@ -71,7 +71,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                   POLOMO
                 </span>
                 <span className="font-condensed text-[8.5px] tracking-widest uppercase text-[#4F4F60] font-bold mt-0.5">
-                  UNSHAKABLE PRESENCE
+                  SPEAKUP LAB · 30-DAY SPRINT
                 </span>
               </div>
             </a>
@@ -93,14 +93,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                 onClick={(e) => handleNavClick(e, 'what-you-get')}
                 className="hover:text-[#F9000E] transition-colors whitespace-nowrap"
               >
-                What You Get
+                What&apos;s Included
               </a>
               <a
                 href="#why-pods"
                 onClick={(e) => handleNavClick(e, 'why-pods')}
                 className="hover:text-[#F9000E] transition-colors whitespace-nowrap"
               >
-                Why Pods
+                Why 10-Person Pods
               </a>
               <a
                 href="#faqs"
@@ -124,23 +124,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
               <Search size={16} />
             </button>
 
-            {/* Stated Value Pill link (visible on xl screens to avoid tablet/laptop overflow) */}
+            {/* Founding Investment Pill */}
             <a
               href="#what-you-get"
               onClick={(e) => handleNavClick(e, 'what-you-get')}
               className="hidden xl:inline-flex items-center gap-1 font-condensed uppercase tracking-wider text-[11px] font-bold text-[#4F4F60] hover:text-[#0B0B10] transition-colors py-1 px-2.5 rounded-full hover:bg-[#F6F7F9]"
             >
-              <span>OFFER</span>
-              <span className="text-[#F9000E]">₦150,000</span>
+              <span>FOUNDING COHORT</span>
+              <span className="text-[#F9000E]">₦20,000</span>
             </a>
 
-            {/* Primary Action Button - Fitted cleanly inside capsule */}
+            {/* Primary Action Button */}
             <button
               type="button"
               onClick={onClaimSeat}
               className="inline-flex items-center justify-center px-3.5 sm:px-5 py-2 text-xs sm:text-sm font-condensed uppercase tracking-wider font-bold text-white bg-[#F9000E] hover:bg-[#D6000C] active:scale-[0.98] rounded-full shadow-superhi-sm hover:shadow-superhi transition-all whitespace-nowrap cursor-pointer shrink-0"
             >
-              <span>Claim Free Seat</span>
+              <span>Save My Place — ₦20,000</span>
             </button>
 
             {/* Mobile Menu Toggle */}
@@ -167,7 +167,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
               autoFocus
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search topics (e.g. FAQs, coaching pods, schedule, price)..."
+              placeholder="Search topics (e.g. FAQs, facilitator, pod size, ₦20,000)..."
               className="w-full text-xs sm:text-sm font-medium text-[#0B0B10] outline-none px-2 py-1"
             />
             <button
@@ -203,7 +203,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                 onClick={(e) => handleNavClick(e, 'what-you-get')}
                 className="py-1 hover:text-[#F9000E] transition-colors flex items-center justify-between"
               >
-                <span>What You Get (₦150,000 Value)</span>
+                <span>What&apos;s Included (₦20,000 Pass)</span>
                 <ArrowRight size={16} className="text-[#4F4F60]" />
               </a>
               <a
@@ -231,7 +231,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                   }}
                   className="w-full py-3.5 text-center text-sm font-condensed uppercase tracking-wider font-bold text-white bg-[#F9000E] hover:bg-[#D6000C] rounded-full shadow-superhi cursor-pointer flex items-center justify-center gap-2"
                 >
-                  <span>Claim My Free Seat — ₦0</span>
+                  <span>Save My Place — ₦20,000</span>
                 </button>
               </div>
             </nav>

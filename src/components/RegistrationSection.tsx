@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, CheckCircle2, User, Mail, Phone, ArrowRight, AlertCircle } from 'lucide-react';
+import { ShieldCheck, User, Mail, Phone, ArrowRight, AlertCircle, Award } from 'lucide-react';
 import { AsteriskShape } from './GeometricShapes';
 
 interface RegistrationData {
@@ -14,7 +14,7 @@ export const RegistrationSection: React.FC = () => {
     fullName: '',
     email: '',
     phone: '',
-    challenge: 'Blanking out or losing my train of thought under pressure',
+    challenge: 'Blanking out',
   });
 
   const [errors, setErrors] = useState<Partial<Record<keyof RegistrationData, string>>>({});
@@ -23,11 +23,12 @@ export const RegistrationSection: React.FC = () => {
   const [submittedData, setSubmittedData] = useState<RegistrationData | null>(null);
 
   const challengeOptions = [
-    'Blanking out or losing my train of thought under pressure',
-    'Racing heartbeat, trembling voice, or shortness of breath',
-    'Avoiding speaking up in meetings even when I have answers',
-    'Difficulty structuring impromptu answers when put on the spot',
-    'Worrying obsessively about being judged by colleagues or superiors',
+    'Blanking out',
+    'Staying quiet in groups',
+    'Introductions',
+    'Unexpected questions',
+    'Interviews',
+    'Other',
   ];
 
   const validate = (): boolean => {
@@ -48,7 +49,7 @@ export const RegistrationSection: React.FC = () => {
     if (!formData.phone.trim()) {
       newErrors.phone = 'Please enter your WhatsApp phone number';
     } else if (formData.phone.trim().replace(/\D/g, '').length < 8) {
-      newErrors.phone = 'Please provide a complete phone number';
+      newErrors.phone = 'Please provide a complete WhatsApp phone number';
     }
 
     setErrors(newErrors);
@@ -77,6 +78,8 @@ export const RegistrationSection: React.FC = () => {
           email: formData.email.trim(),
           phone: formData.phone.trim(),
           challenge: formData.challenge,
+          tuition: '₦20,000',
+          cohort: 'POLOMO SpeakUp Lab: 30-Day Sprint',
         }),
       });
 
@@ -84,14 +87,14 @@ export const RegistrationSection: React.FC = () => {
       setIsSubmitted(true);
       setSubmittedData({ ...formData });
     } catch (err) {
-      console.error('Google Sheets lead intake error:', err);
+      console.error('Google Sheets intake error:', err);
       setIsSubmitting(false);
       setIsSubmitted(true);
       setSubmittedData({ ...formData });
     }
   };
 
-const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq';
+  const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq';
 
   return (
     <section id="register" className="py-10 sm:py-14 bg-[#FFFFFF] border-y border-[#0B0B10]/10 relative scroll-mt-20">
@@ -99,7 +102,7 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
           <div className="inline-block font-condensed text-xs uppercase tracking-widest text-[#F9000E] font-bold mb-2">
-            STEP 1 OF 2 · QUALIFY & RESERVE YOUR SPOT
+            ENROL NOW · FOUNDING COHORT
           </div>
           <h2
             className="font-display-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0B0B10] tracking-tight leading-tight mb-3 uppercase"
@@ -108,7 +111,7 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
             Your Next Speaking Opportunity Should Not Catch You Unprepared.
           </h2>
           <p className="font-condensed text-base sm:text-lg text-[#4F4F60] leading-relaxed">
-            Start with seven days of structured practice, a supportive pod, and dedicated coaching. Experience the programme before making a decision about what comes next.
+            Thirty days of small, supported speaking practice in a pod of 10 people with a facilitator who keeps the room encouraging.
           </p>
         </div>
 
@@ -116,25 +119,25 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 mb-6 sm:mb-8 font-condensed uppercase tracking-wider">
           <div className="bg-[#F6F7F9] border border-[#0B0B10]/10 rounded-xl p-2.5 sm:p-3 text-center">
             <span className="block text-[11px] text-[#4F4F60] mb-0.5">Duration</span>
-            <span className="text-sm sm:text-base font-bold text-[#0B0B10]">7-Day Free Trial</span>
+            <span className="text-sm sm:text-base font-bold text-[#0B0B10]">30-Day Sprint</span>
           </div>
           <div className="bg-[#F6F7F9] border border-[#0B0B10]/10 rounded-xl p-2.5 sm:p-3 text-center">
-            <span className="block text-[11px] text-[#4F4F60] mb-0.5">Tuition</span>
-            <span className="text-sm sm:text-base font-bold text-[#16AB59]">₦0 for Trial</span>
+            <span className="block text-[11px] text-[#4F4F60] mb-0.5">Investment</span>
+            <span className="text-sm sm:text-base font-bold text-[#F9000E]">₦20,000 One-Time</span>
           </div>
           <div className="bg-[#F6F7F9] border border-[#0B0B10]/10 rounded-xl p-2.5 sm:p-3 text-center">
-            <span className="block text-[11px] text-[#4F4F60] mb-0.5">Trial Capacity</span>
-            <span className="text-sm sm:text-base font-bold text-[#0B0B10]">50 Total Seats</span>
+            <span className="block text-[11px] text-[#4F4F60] mb-0.5">Cohort Cap</span>
+            <span className="text-sm sm:text-base font-bold text-[#0B0B10]">Only 50 Places</span>
           </div>
           <div className="bg-[#F6F7F9] border border-[#0B0B10]/10 rounded-xl p-2.5 sm:p-3 text-center">
-            <span className="block text-[11px] text-[#4F4F60] mb-0.5">Coaching Setup</span>
-            <span className="text-sm sm:text-base font-bold text-[#F9000E]">5 Pods (10 Each)</span>
+            <span className="block text-[11px] text-[#4F4F60] mb-0.5">Pod Structure</span>
+            <span className="text-sm sm:text-base font-bold text-[#16AB59]">5 Pods of 10</span>
           </div>
         </div>
 
         {/* Main Card Container */}
         <div className="bg-[#F6F7F9] border-2 border-[#0B0B10] rounded-2xl p-5 sm:p-7 md:p-8 shadow-superhi relative overflow-hidden">
-          {/* Decorative Corner Shapes */}
+          {/* Decorative Corner Shape */}
           <div className="absolute top-4 right-4 pointer-events-none opacity-30 hidden sm:block">
             <AsteriskShape className="w-8 h-8" color="#FFA300" />
           </div>
@@ -143,13 +146,13 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
             <form onSubmit={handleSubmit} noValidate className="max-w-xl mx-auto space-y-4">
               <div className="text-center mb-5">
                 <span className="inline-block font-condensed text-[11px] uppercase tracking-widest text-white bg-[#0B0B10] px-3 py-0.5 rounded-full font-bold mb-1.5 shadow-superhi-sm">
-                  STEP 1 OF 2 · QUALIFY YOUR SEAT
+                  FOUNDING COHORT · 50 PLACES
                 </span>
                 <h3 className="font-display-serif text-xl sm:text-2xl font-semibold text-[#0B0B10] uppercase">
-                  Claim Your Free Trial Seat
+                  Enrol in the 30-Day Sprint
                 </h3>
-                <p className="font-condensed text-[11px] uppercase tracking-wide text-[#4F4F60] mt-0.5">
-                  (Start your seven-day trial for ₦0. Direct entry into the WhatsApp Community.)
+                <p className="font-condensed text-xs uppercase tracking-wide text-[#4F4F60] mt-0.5">
+                  ₦20,000 one-time · Enrolment closes 21 Nov 2026 · Core programme starts 28 Nov 2026
                 </p>
               </div>
 
@@ -210,7 +213,7 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
               {/* WhatsApp Phone */}
               <div>
                 <label htmlFor="reg-phone" className="block font-condensed text-[11px] uppercase tracking-wider text-[#0B0B10] font-bold mb-1">
-                  WhatsApp Phone Number *
+                  WhatsApp Number *
                 </label>
                 <div className="relative">
                   <Phone className="w-4 h-4 text-[#4F4F60] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -227,7 +230,7 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                   />
                 </div>
                 <p className="mt-1 font-condensed text-xs text-[#4F4F60]">
-                  Used to verify your entry into the POLOMO Unshakable Presence Community.
+                  Used only to add you to the community, never shared.
                 </p>
                 {errors.phone && (
                   <p className="mt-1 font-condensed text-xs text-[#F9000E] flex items-center gap-1 font-medium">
@@ -237,10 +240,10 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                 )}
               </div>
 
-              {/* Primary Challenge */}
+              {/* Main Speaking Hurdle */}
               <div>
                 <label htmlFor="reg-challenge" className="block font-condensed text-[11px] uppercase tracking-wider text-[#0B0B10] font-bold mb-1">
-                  What is your primary speaking hurdle right now?
+                  Main speaking hurdle? (choose one):
                 </label>
                 <select
                   id="reg-challenge"
@@ -248,9 +251,9 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                   onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
                   className="w-full px-4 py-2.5 sm:py-3 bg-white border border-[#0B0B10]/20 focus:border-[#F9000E] rounded-xl font-condensed text-sm sm:text-base font-medium text-[#0B0B10] outline-none shadow-superhi-sm transition-all cursor-pointer"
                 >
-                  {challengeOptions.map((challenge, idx) => (
-                    <option key={idx} value={challenge}>
-                      {challenge}
+                  {challengeOptions.map((opt, idx) => (
+                    <option key={idx} value={opt}>
+                      {opt}
                     </option>
                   ))}
                 </select>
@@ -266,17 +269,17 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                   {isSubmitting ? (
                     <span className="inline-flex items-center gap-2">
                       <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                      <span>Verifying Seat Availability...</span>
+                      <span>Reserving Your Place...</span>
                     </span>
                   ) : (
                     <>
-                      <span>Reserve Spot & Unlock Community Link</span>
+                      <span>Save My Place for ₦20,000</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}
                 </button>
                 <p className="mt-2 text-center font-condensed text-xs text-[#4F4F60]">
-                  Immediate step 2: You will be redirected straight to join our WhatsApp community for instant onboarding.
+                  After saving your place, you are taken straight to the community link.
                 </p>
               </div>
 
@@ -284,25 +287,25 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
               <div className="flex flex-wrap items-center justify-center gap-3 font-condensed uppercase tracking-wider text-[11px] text-[#4F4F60] pt-1">
                 <span className="flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#16AB59]" />
-                  <span>No payment required</span>
+                  <span>₦20,000 One-Time Payment</span>
                 </span>
                 <span aria-hidden="true">·</span>
-                <span>Direct WhatsApp Onboarding</span>
+                <span>Direct Community Access</span>
                 <span aria-hidden="true">·</span>
-                <span>Strict 10-person pod cap</span>
+                <span>Strict 50-Place Limit</span>
               </div>
             </form>
           ) : (
             /* Confirmation State: Concept 1 — Executive Memo & Tactile WhatsApp Pass */
             <div className="py-1">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-                {/* Left Column: Personal Executive Memo from Coaching Leads */}
+                {/* Left Column: Personal Memo */}
                 <div className="lg:col-span-7 text-left space-y-5">
                   <div>
                     <div className="inline-flex items-center gap-2 bg-[#25D366]/15 border border-[#25D366]/40 px-3 py-1 rounded-full mb-3 shadow-superhi-sm">
                       <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
                       <span className="font-condensed text-[11px] uppercase tracking-widest text-[#0B0B10] font-bold">
-                        COHORT ONBOARDING · STEP 2 OF 2
+                        FOUNDING COHORT · PLACE RESERVED
                       </span>
                     </div>
 
@@ -311,7 +314,7 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                     </h3>
 
                     <p className="font-condensed text-base sm:text-lg text-[#333340] mt-2.5 leading-relaxed">
-                      Your ₦0 trial seat has been logged in our cohort registry. We deliberately avoid lengthy automated email sequences—speaking presence isn’t built reading inboxes, it is forged through real voice interaction, peer momentum, and direct coach feedback.
+                      Your details are confirmed for the POLOMO SpeakUp Lab 30-Day Sprint. We deliberately avoid lengthy automated email sequences—all direct onboarding, weekly live AMA sessions, daily mini-exercises, and community orientation happen inside our private WhatsApp room.
                     </p>
                   </div>
 
@@ -326,7 +329,7 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                           Weekly Live AMAs with Coaching Leads
                         </h4>
                         <p className="font-condensed text-xs sm:text-sm text-[#4F4F60] leading-relaxed mt-0.5">
-                          Direct answers on meeting anxiety, pitch preparation, and handling impromptu questions under pressure.
+                          Direct access to ask questions, deconstruct real meeting dilemmas, and get on-the-spot coaching.
                         </p>
                       </div>
                     </div>
@@ -340,7 +343,7 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                           Daily 60–90 Second Vocal Micro-Exercises
                         </h4>
                         <p className="font-condensed text-xs sm:text-sm text-[#4F4F60] leading-relaxed mt-0.5">
-                          Frictionless daily audio prompts and practice reps designed to condition vocal composure without overwhelm.
+                          Low-friction vocal micro-drills to condition calmness, message structure, and impromptu presence.
                         </p>
                       </div>
                     </div>
@@ -351,32 +354,23 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                       </div>
                       <div>
                         <h4 className="font-display-serif text-sm sm:text-base font-semibold uppercase text-[#0B0B10]">
-                          Personal Community Manager Welcome
+                          Community Manager Welcome
                         </h4>
                         <p className="font-condensed text-xs sm:text-sm text-[#4F4F60] leading-relaxed mt-0.5">
-                          Our community team is inside the group now to greet you, answer onboarding queries, and orient your pod.
+                          Dedicated community managers are standing by right now to welcome you, answer queries, and orient your pod.
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Coach Signature Note */}
-                  <div className="flex items-center gap-3 pt-2 text-[#4F4F60] font-condensed">
-                    <div className="w-10 h-10 rounded-full bg-[#0B0B10] text-white flex items-center justify-center font-display-serif font-bold text-sm shadow-superhi-sm shrink-0">
-                      P
-                    </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-wider text-[#0B0B10] font-bold">
-                        POLOMO Coaching Leads
-                      </p>
-                      <p className="text-xs text-[#6B7280]">
-                        Unshakable Presence Initiative · 50-Seat Cohort Pods
-                      </p>
-                    </div>
+                  {/* Guarantee Reassurance */}
+                  <div className="flex items-center gap-2.5 pt-2 text-[#4F4F60] font-condensed text-xs">
+                    <Award className="w-4 h-4 text-[#16AB59] shrink-0" />
+                    <span>Protected by the Speaking Confidence Progress Guarantee (up to 2 weeks extra support free if needed).</span>
                   </div>
                 </div>
 
-                {/* Right Column: Tactile WhatsApp Admission Pass & Single Clear Action */}
+                {/* Right Column: Tactile Admission Pass & Direct WhatsApp Entry */}
                 <div className="lg:col-span-5 text-left">
                   <div className="bg-white border-2 border-[#0B0B10] rounded-2xl p-5 sm:p-6 shadow-superhi relative">
                     {/* Pass Header */}
@@ -396,14 +390,14 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                         </span>
                       </div>
                       <span className="font-condensed text-[11px] font-bold bg-[#FFA300] text-[#0B0B10] px-2.5 py-0.5 rounded-full border border-[#0B0B10]/20 uppercase tracking-wider">
-                        ₦0 FREE TRIAL
+                        ₦20,000 FOUNDING PASS
                       </span>
                     </div>
 
                     {/* Group Title */}
                     <div className="mb-4">
                       <span className="font-condensed text-[10px] uppercase tracking-wider text-[#6B7280] block">
-                        Assigned WhatsApp Community
+                        Assigned Community
                       </span>
                       <strong className="font-display-serif text-base sm:text-lg text-[#0B0B10] font-bold uppercase block leading-snug">
                         POLOMO Unshakable Presence Community
@@ -427,10 +421,10 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                         </strong>
                       </div>
                       <div className="flex justify-between items-center pt-0.5">
-                        <span className="text-[#6B7280]">Room Status:</span>
+                        <span className="text-[#6B7280]">Sprint Start:</span>
                         <span className="inline-flex items-center gap-1.5 font-bold text-[#16AB59] bg-[#16AB59]/10 px-2 py-0.5 rounded-full text-xs">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#16AB59] animate-ping" />
-                          Awaiting Your Entry
+                          28 November 2026
                         </span>
                       </div>
                     </div>
@@ -440,7 +434,7 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                       <span className="font-bold text-[#0B0B10] block mb-0.5">
                         📌 PINNED INSIDE THE COMMUNITY:
                       </span>
-                      Your <em>Panic Killer Protocol</em> & <em>5-Minute Habit Blueprint</em> are waiting in the group description.
+                      Your <em>Never-Blank Toolkit</em>, <em>Pre-Speech Calm Audio</em>, and <em>Daily Practice Prompts</em> are waiting inside.
                     </div>
 
                     {/* Primary CTA Button */}
@@ -453,11 +447,11 @@ const WHATSAPP_COMMUNITY_URL = 'https://chat.whatsapp.com/LHcbvetC4sRG8Sr7hAk2Uq
                       <svg className="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
                         <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.182 8.182 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.24 8.24-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.12.82.83-3.04-.19-.3a8.196 8.196 0 0 1-1.25-4.47c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.44.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.3" />
                       </svg>
-                      <span>Join WhatsApp Community →</span>
+                      <span>Step Inside WhatsApp Community →</span>
                     </a>
 
                     <p className="mt-2 text-center font-condensed text-[11px] text-[#6B7280]">
-                      Community managers will greet you and confirm your pod assignment.
+                      Community managers are inside now to greet you and verify your pod seat.
                     </p>
 
                     <div className="mt-4 pt-3 border-t border-[#0B0B10]/10 text-center">

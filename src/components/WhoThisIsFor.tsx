@@ -1,38 +1,30 @@
 import React from 'react';
-import { Presentation, Briefcase, MessageSquareQuote, Target } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, ShieldCheck } from 'lucide-react';
 
 export const WhoThisIsFor: React.FC = () => {
-  const useCases = [
+  const criteria = [
     {
-      icon: Presentation,
-      title: 'Speaking in Important Rooms',
-      description:
-        'When you have valuable ideas during department syncs, board meetings, or executive updates, but hesitate to unmute or raise your hand until the moment passes.',
-      badge: 'Workplace Meetings',
+      title: 'You Know What to Say, But Hesitate',
+      description: 'You often know what you want to say but find it hard when others are listening and attention turns directly to you.',
+      badge: 'Hesitation',
       color: '#F9000E',
     },
     {
-      icon: Briefcase,
-      title: 'Handling Career Opportunities',
-      description:
-        'When client pitches, promotion panels, job interviews, or leadership moments demand that you articulate your value clearly and without second-guessing yourself.',
-      badge: 'Deals & Career',
+      title: 'You Avoid Speaking Situations',
+      description: 'You avoid meetings, group discussions, introductions, networking, job interviews, or unexpected questions.',
+      badge: 'Avoidance',
       color: '#0B0B10',
     },
     {
-      icon: MessageSquareQuote,
-      title: 'Participating Spontaneously',
-      description:
-        'When you are put on the spot with &ldquo;What do you think?&rdquo; and want to answer calmly with structure, rather than freezing or rambling.',
-      badge: 'Impromptu Speaking',
+      title: 'You Need Support, Not Judgment',
+      description: 'You want a supportive, encouraging place to practise with peers who understand, not a critical or intimidating room.',
+      badge: 'Safe Culture',
       color: '#16AB59',
     },
     {
-      icon: Target,
-      title: 'Feeling Prepared Under Pressure',
-      description:
-        'When you want a reliable physical routine and micro-habit to steady your racing pulse, dry mouth, or voice tremors before delivering your message.',
-      badge: 'Poise & Control',
+      title: 'You Are Willing to Take Small Steps',
+      description: 'You are willing to take small steps, even awkward ones, knowing progress compounds with simple, steady daily reps.',
+      badge: 'Commitment',
       color: '#FFA300',
     },
   ];
@@ -43,7 +35,7 @@ export const WhoThisIsFor: React.FC = () => {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-10">
           <div className="inline-block font-condensed text-xs uppercase tracking-widest text-[#F9000E] font-bold mb-2">
-            INTENDED PARTICIPANTS
+            WHO IT&apos;S FOR
           </div>
           <h2
             className="font-display-serif text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0B0B10] tracking-tight leading-tight mb-3 uppercase"
@@ -52,46 +44,64 @@ export const WhoThisIsFor: React.FC = () => {
             For People Who Want to Speak Up With More Confidence.
           </h2>
           <p className="font-condensed text-base sm:text-lg text-[#4F4F60] leading-relaxed">
-            Whether you are leading projects, presenting to stakeholders, or simply wanting your voice to carry weight in everyday discussions, this sprint gives you the practical space to build unshakable presence.
+            This sprint is designed specifically for people who have value to share but feel held back when the spotlight hits.
           </p>
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-5xl mx-auto">
-          {useCases.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-[#F8FAFC] border border-[#0B0B10]/15 rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-superhi shadow-superhi-hover transition-all"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-4 mb-4">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center border border-[#0B0B10]/15 shadow-superhi-sm"
-                      style={{ backgroundColor: item.color === '#FFA300' ? '#FFA300' : '#FFFFFF' }}
-                    >
-                      <Icon
-                        className="w-5 h-5"
-                        style={{ color: item.color === '#FFA300' ? '#0B0B10' : item.color }}
-                      />
-                    </div>
-                    <span className="font-condensed text-[11px] font-bold uppercase tracking-wider text-[#0B0B10] bg-white px-2.5 py-0.5 rounded-full border border-[#0B0B10]/10">
-                      {item.badge}
-                    </span>
-                  </div>
-
-                  <h3 className="font-display-serif text-lg sm:text-xl font-semibold text-[#0B0B10] mb-2 uppercase">
-                    {item.title}
-                  </h3>
-
-                  <p className="font-condensed text-sm sm:text-base text-[#4F4F60] leading-relaxed">
-                    {item.description}
-                  </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-5xl mx-auto mb-8">
+          {criteria.map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-[#F8FAFC] border border-[#0B0B10]/15 rounded-2xl p-5 sm:p-6 flex flex-col justify-between shadow-superhi shadow-superhi-hover transition-all"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-4 mb-3">
+                  <span className="font-condensed text-[11px] font-bold uppercase tracking-wider text-[#0B0B10] bg-white px-2.5 py-0.5 rounded-full border border-[#0B0B10]/10">
+                    {item.badge}
+                  </span>
+                  <CheckCircle2 className="w-5 h-5 text-[#16AB59]" />
                 </div>
+
+                <h3 className="font-display-serif text-lg sm:text-xl font-semibold text-[#0B0B10] mb-2 uppercase">
+                  {item.title}
+                </h3>
+
+                <p className="font-condensed text-sm sm:text-base text-[#4F4F60] leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-            );
-          })}
+            </div>
+          ))}
+        </div>
+
+        {/* Encouraging Core Maxim */}
+        <div className="bg-[#FFA300]/15 border border-[#FFA300]/50 rounded-2xl p-4 sm:p-5 max-w-3xl mx-auto mb-8 text-center shadow-superhi-sm">
+          <p className="font-condensed text-base sm:text-lg text-[#0B0B10] font-bold leading-relaxed">
+            You do not need to be good at speaking, and you do not need to feel confident first. That is what you are here to build.
+          </p>
+        </div>
+
+        {/* An Honest Note: What This Isn't */}
+        <div className="bg-[#FFF5F5] border-2 border-[#0B0B10] rounded-2xl p-5 sm:p-7 max-w-3xl mx-auto shadow-superhi">
+          <div className="flex items-center gap-2 mb-3 pb-2 border-b border-[#0B0B10]/10">
+            <AlertTriangle className="w-5 h-5 text-[#F9000E]" />
+            <span className="font-condensed text-xs font-bold uppercase tracking-widest text-[#0B0B10]">
+              AN HONEST NOTE: WHAT THIS ISN&apos;T
+            </span>
+          </div>
+
+          <div className="font-condensed text-sm sm:text-base text-[#333340] space-y-2.5 leading-relaxed">
+            <p>
+              <strong className="text-[#0B0B10]">Not a presentation-skills course, not speechwriting, and not therapy.</strong>
+            </p>
+            <p>
+              Facilitators are not clinicians, so if anxiety is severely affecting your daily life, please speak to a qualified professional.
+            </p>
+            <p className="text-[#0B0B10] font-medium pt-1">
+              We also do not promise your nerves will disappear. The goal is to feel more comfortable and to stop letting nerves make the decision for you.
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUp, X } from 'lucide-react';
+import { ArrowUp, X, ArrowRight } from 'lucide-react';
 
 interface FooterProps {
   onClaimSeat: () => void;
@@ -23,25 +23,32 @@ export const Footer: React.FC<FooterProps> = ({ onClaimSeat }) => {
   return (
     <footer className="bg-[#0B0B10] text-[#F6F7F9] pt-10 pb-8 border-t border-[#0B0B10] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Upper Action Bar */}
-        <div className="bg-[#F9000E] rounded-2xl p-5 sm:p-7 mb-10 flex flex-col md:flex-row items-center justify-between gap-5 shadow-superhi text-white">
+        {/* Upper Action Bar: Final Call */}
+        <div className="bg-[#F9000E] rounded-2xl p-6 sm:p-8 mb-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-superhi text-white">
           <div className="max-w-xl text-center md:text-left">
             <span className="font-condensed text-[11px] uppercase tracking-widest text-[#0B0B10] bg-[#FFA300] px-2.5 py-0.5 rounded-full mb-2 inline-block font-bold">
-              UNSHAKABLE PRESENCE
+              FINAL CALL · FOUNDING COHORT
             </span>
-            <h3 className="font-display-serif text-xl sm:text-2xl font-semibold mb-1.5 tracking-tight uppercase">
-              Ready to practise speaking without the fear?
+            <h3 className="font-display-serif text-xl sm:text-2xl lg:text-3xl font-semibold mb-2 tracking-tight uppercase">
+              Silence feels safer, but it will not change anything on its own.
             </h3>
-            <p className="font-condensed text-sm sm:text-base text-white/90">
-              Claim your free 7-day trial seat. Capped at 50 participants across five dedicated pods.
+            <p className="font-condensed text-sm sm:text-base text-white/95 leading-relaxed mb-2">
+              What changes it is practice: small, repeated, supported, and at your pace.
+            </p>
+            <p className="font-condensed text-xs uppercase tracking-wider text-white/80 font-semibold">
+              ₦20,000 · Enrolment closes 21 November 2026 · Core programme starts 28 November 2026
+            </p>
+            <p className="font-condensed text-xs text-white/90 italic mt-1">
+              Observe first if you want to. Nobody will make you speak before you are ready.
             </p>
           </div>
           <button
             type="button"
             onClick={onClaimSeat}
-            className="px-6 py-3 bg-[#FFFFFF] hover:bg-[#F3F4F6] text-[#0B0B10] font-condensed uppercase tracking-wider font-extrabold rounded-full shadow-superhi hover:shadow-superhi-lg transition-all whitespace-nowrap text-sm cursor-pointer"
+            className="px-7 py-3.5 bg-[#FFFFFF] hover:bg-[#F3F4F6] text-[#0B0B10] font-condensed uppercase tracking-wider font-extrabold rounded-full shadow-superhi hover:shadow-superhi-lg transition-all whitespace-nowrap text-sm sm:text-base cursor-pointer shrink-0 flex items-center gap-2 group"
           >
-            Claim Your Free Seat — ₦0
+            <span>Save My Place for ₦20,000</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
@@ -52,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimSeat }) => {
               <div className="bg-white p-1 rounded-lg shrink-0 border border-white/20">
                 <img
                   src="/assets/black_transparent%20logo-1.png"
-                  alt="POLOMO - Unshakable Presence Logo"
+                  alt="POLOMO SpeakUp Lab Logo"
                   width="1537"
                   height="1023"
                   style={{ aspectRatio: '1537 / 1023' }}
@@ -65,12 +72,12 @@ export const Footer: React.FC<FooterProps> = ({ onClaimSeat }) => {
                   POLOMO
                 </span>
                 <span className="font-condensed text-[10px] tracking-widest uppercase text-[#FFA300] font-bold mt-0.5">
-                  UNSHAKABLE PRESENCE
+                  SPEAKUP LAB · 30-DAY SPRINT
                 </span>
               </div>
             </div>
             <p className="font-condensed text-sm text-[#9CA3AF] max-w-sm leading-relaxed">
-              A structured practice initiative designed to help professionals overcome speaking avoidance, communicate with poise, and build lasting confidence through low-friction micro-reps and small-group coaching pods.
+              Thirty days of small, supported speaking practice in a pod of 10 people with a facilitator who keeps the room encouraging. Start at a level that suits you, or simply watch first.
             </p>
           </div>
 
@@ -85,7 +92,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimSeat }) => {
                   onClick={(e) => handleNavClick(e, 'how-it-works')}
                   className="hover:text-white transition-colors"
                 >
-                  How the 7-Day Trial Works
+                  How the 30 Days Work
                 </a>
               </li>
               <li>
@@ -94,7 +101,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimSeat }) => {
                   onClick={(e) => handleNavClick(e, 'what-you-get')}
                   className="hover:text-white transition-colors"
                 >
-                  What You Get (₦150,000 Value)
+                  What&apos;s Included (₦20,000)
                 </a>
               </li>
               <li>
@@ -103,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimSeat }) => {
                   onClick={(e) => handleNavClick(e, 'why-pods')}
                   className="hover:text-white transition-colors"
                 >
-                  Why the 10-Person Pod Format Matters
+                  Why 10-Person Pods
                 </a>
               </li>
               <li>
@@ -120,22 +127,23 @@ export const Footer: React.FC<FooterProps> = ({ onClaimSeat }) => {
 
           <div className="md:col-span-3 space-y-2.5">
             <div className="font-condensed text-xs uppercase tracking-widest text-[#FFA300] font-bold">
-              TRIAL SPECIFICATIONS
+              COHORT SPECIFICATIONS
             </div>
             <ul className="space-y-1 font-condensed uppercase tracking-wider text-[11px] text-[#D1D5DB]">
-              <li>Brand: POLOMO</li>
-              <li>Tuition: ₦0 (Free)</li>
-              <li>Stated Value: ₦150,000</li>
-              <li>Capacity: 50 participants</li>
-              <li>Pods: 5 pods of 10 people</li>
-              <li>Format: Daily micro-reps + 2 drills</li>
+              <li>Programme: POLOMO SpeakUp Lab</li>
+              <li>Tuition: ₦20,000 One-Time</li>
+              <li>Cohort Size: Strictly 50 Places</li>
+              <li>Pods: 5 Pods of 10 People</li>
+              <li>Enrolment Closes: 21 Nov 2026</li>
+              <li>Core Starts: 28 Nov 2026</li>
+              <li>Alumni Access: 3 Months Included</li>
             </ul>
           </div>
         </div>
 
         {/* Lower Legal & Utility Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 font-condensed uppercase tracking-wider text-xs text-white/60">
-          <p>© {new Date().getFullYear()} POLOMO. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} POLOMO SpeakUp Lab. All rights reserved.</p>
 
           <div className="flex items-center gap-5">
             <button
@@ -150,7 +158,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimSeat }) => {
               onClick={() => setLegalModal('terms')}
               className="hover:text-white transition-colors cursor-pointer"
             >
-              Terms of Trial
+              Terms of Enrolment
             </button>
             <button
               type="button"
@@ -182,29 +190,32 @@ export const Footer: React.FC<FooterProps> = ({ onClaimSeat }) => {
             </button>
 
             <h3 className="font-display-serif text-2xl font-semibold mb-4 uppercase">
-              {legalModal === 'privacy' ? 'POLOMO Privacy Policy' : 'POLOMO Terms of Trial Participation'}
+              {legalModal === 'privacy' ? 'POLOMO Privacy Policy' : 'POLOMO Terms of Enrolment'}
             </h3>
 
             <div className="font-condensed text-sm sm:text-base text-[#4F4F60] space-y-3 leading-relaxed max-h-80 overflow-y-auto pr-2">
               {legalModal === 'privacy' ? (
                 <>
                   <p>
-                    Your contact information (name, email, and WhatsApp number) is collected solely for coordinating your coaching pod, delivering daily speaking prompts, and providing live session access links.
+                    Your contact information (name, email, and WhatsApp number) is collected solely for coordinating your pod placement, delivering daily practice cards, and providing live session access links.
                   </p>
                   <p>
-                    We respect your privacy and will never sell, rent, or distribute your personal details to third parties. Communications are strictly focused on trial operations and sprint materials.
+                    We respect your privacy and will never sell, rent, or distribute your personal details to third parties. Communications are strictly focused on sprint operations and practice materials.
                   </p>
                 </>
               ) : (
                 <>
                   <p>
-                    1. <strong>Tuition:</strong> The 7-day trial is completely free (₦0) with no payment card required to register.
+                    1. <strong>Investment:</strong> The founding cohort tuition is ₦20,000 one-time, covering the 30-day sprint, all 5 bonus packs, and 3 months of alumni practice access.
                   </p>
                   <p>
                     2. <strong>Pod Conduct:</strong> Participants agree to maintain an atmosphere of mutual respect, confidentiality, and psychological safety. Recordings inside pod practice rooms are strictly prohibited without consent.
                   </p>
                   <p>
-                    3. <strong>Practice Focus:</strong> The sprint offers structured behavioral and vocal communication drills. It is an educational practice programme and does not replace medical or clinical psychotherapy.
+                    3. <strong>Progress Guarantee:</strong> If you actively participate and feel you need additional time to build confidence, you are eligible for up to two additional weeks of guided support at no extra cost.
+                  </p>
+                  <p>
+                    4. <strong>Educational Scope:</strong> The sprint offers structured behavioral and vocal communication drills. Facilitators are not clinicians, and this programme does not replace medical or clinical psychotherapy.
                   </p>
                 </>
               )}
