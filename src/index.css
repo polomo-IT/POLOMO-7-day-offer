@@ -21,6 +21,8 @@ html, body {
   font-family: 'Barlow Condensed', sans-serif;
   background-color: #F6F7F9;
   color: #0B0B10;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 ::selection {
@@ -28,7 +30,7 @@ html, body {
   color: #FFFFFF;
 }
 
-/* Custom font utilities matching user reference (Feijoa + Founders Grotesk X-Condensed) */
+/* Custom font utilities */
 .font-display-serif {
   font-family: 'Fraunces', Georgia, serif;
   font-optical-sizing: auto;
@@ -38,19 +40,28 @@ html, body {
   font-family: 'Barlow Condensed', sans-serif;
 }
 
-/* User Feature Grid */
+/* Fluid responsive feature grid */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 24px;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .feature-grid {
+    gap: 20px;
+  }
 }
 @media (min-width: 768px) {
   .feature-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
+    gap: 16px;
   }
 }
-
+@media (min-width: 1024px) {
+  .feature-grid {
+    gap: 24px;
+  }
+}
 
 /* POLOMO signature SuperHi hard-offset shadow utilities */
 .shadow-superhi-sm {
@@ -128,4 +139,3 @@ html, body {
 .animate-bounce-gentle {
   animation: bounceGentle 4s ease-in-out infinite;
 }
-

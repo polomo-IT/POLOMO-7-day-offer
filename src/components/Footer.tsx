@@ -45,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onClaimSeat }) => {
           <button
             type="button"
             onClick={onClaimSeat}
-            className="px-7 py-3.5 bg-[#FFFFFF] hover:bg-[#F3F4F6] text-[#0B0B10] font-condensed uppercase tracking-wider font-extrabold rounded-full shadow-superhi hover:shadow-superhi-lg transition-all whitespace-nowrap text-sm sm:text-base cursor-pointer shrink-0 flex items-center gap-2 group"
+            className="w-full md:w-auto px-7 py-3.5 bg-[#FFFFFF] hover:bg-[#F3F4F6] text-[#0B0B10] font-condensed uppercase tracking-wider font-extrabold rounded-full shadow-superhi hover:shadow-superhi-lg transition-all whitespace-nowrap text-sm sm:text-base cursor-pointer shrink-0 flex items-center justify-center gap-2 group"
           >
             <span>Save My Place for ₦20,000</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

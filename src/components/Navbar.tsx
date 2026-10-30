@@ -39,12 +39,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
   };
 
   return (
-    <header className="sticky top-2 sm:top-3 z-40 w-full px-3 sm:px-6 pointer-events-none transition-all">
+    <header className="sticky top-2 sm:top-3 z-40 w-full px-2.5 sm:px-4 md:px-6 pointer-events-none transition-all">
       <div className="max-w-5xl mx-auto pointer-events-auto">
         {/* Floating Pill Capsule Navbar */}
-        <div className="bg-[#FFFFFF]/95 backdrop-blur-md border border-[#0B0B10]/15 rounded-full pl-3 pr-2 sm:pl-4 sm:pr-2.5 py-1.5 sm:py-2 shadow-superhi flex items-center justify-between gap-2 sm:gap-4">
+        <div className="bg-[#FFFFFF]/95 backdrop-blur-md border border-[#0B0B10]/15 rounded-full pl-2.5 pr-1.5 sm:pl-4 sm:pr-2.5 py-1.5 sm:py-2 shadow-superhi flex items-center justify-between gap-1.5 sm:gap-4">
           {/* Left Zone: Brand Logo with Favicon Image + Nav Links */}
-          <div className="flex items-center gap-3 sm:gap-6 min-w-0">
+          <div className="flex items-center gap-2 sm:gap-6 min-w-0">
             {/* POLOMO Favicon Mark Lockup */}
             <a
               href="#"
@@ -52,7 +52,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="flex items-center gap-2 shrink-0 group focus-visible:outline-hidden"
+              className="flex items-center gap-1.5 sm:gap-2 shrink-0 group focus-visible:outline-hidden"
               aria-label="POLOMO SpeakUp Lab Logo"
             >
               <img
@@ -61,25 +61,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                 width="799"
                 height="555"
                 style={{ aspectRatio: '799 / 555' }}
-                className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-6 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105 shrink-0"
                 referrerPolicy="no-referrer"
                 loading="eager"
                 fetchPriority="high"
               />
-              <div className="flex flex-col">
+              <div className="flex flex-col min-w-0">
                 <span className="text-xs sm:text-sm font-extrabold tracking-tight text-[#0B0B10] group-hover:text-[#F9000E] transition-colors leading-none">
                   POLOMO
                 </span>
-                <span className="font-condensed text-[8.5px] tracking-widest uppercase text-[#4F4F60] font-bold mt-0.5">
-                  SPEAKUP LAB · 30-DAY SPRINT
+                <span className="font-condensed text-[7.5px] sm:text-[8.5px] tracking-wider sm:tracking-widest uppercase text-[#4F4F60] font-bold mt-0.5 truncate max-w-[90px] sm:max-w-none">
+                  SPEAKUP LAB
                 </span>
               </div>
             </a>
 
-            {/* Nav Links */}
+            {/* Nav Links for Desktop */}
             <nav
               aria-label="Main Navigation"
-              className="hidden md:flex items-center gap-4 lg:gap-6 text-xs lg:text-sm font-condensed uppercase tracking-wider font-semibold text-[#0B0B10]"
+              className="hidden md:flex items-center gap-3 lg:gap-6 text-xs lg:text-sm font-condensed uppercase tracking-wider font-semibold text-[#0B0B10]"
             >
               <a
                 href="#how-it-works"
@@ -113,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
           </div>
 
           {/* Right Zone: Search Icon + Stated Offer + Primary Pill CTA */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-1 sm:gap-2.5 shrink-0">
             {/* Search Trigger */}
             <button
               type="button"
@@ -121,10 +121,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
               aria-label="Quick Search"
               className="p-1.5 sm:p-2 text-[#0B0B10] hover:text-[#F9000E] rounded-full hover:bg-[#F6F7F9] transition-colors cursor-pointer"
             >
-              <Search size={16} />
+              <Search size={15} className="sm:w-4 sm:h-4" />
             </button>
 
-            {/* Founding Investment Pill */}
+            {/* Founding Investment Pill (Desktop XL) */}
             <a
               href="#what-you-get"
               onClick={(e) => handleNavClick(e, 'what-you-get')}
@@ -134,13 +134,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
               <span className="text-[#F9000E]">₦20,000</span>
             </a>
 
-            {/* Primary Action Button */}
+            {/* Primary Action Button - Responsive Text Sizing */}
             <button
               type="button"
               onClick={onClaimSeat}
-              className="inline-flex items-center justify-center px-3.5 sm:px-5 py-2 text-xs sm:text-sm font-condensed uppercase tracking-wider font-bold text-white bg-[#F9000E] hover:bg-[#D6000C] active:scale-[0.98] rounded-full shadow-superhi-sm hover:shadow-superhi transition-all whitespace-nowrap cursor-pointer shrink-0"
+              className="inline-flex items-center justify-center px-2.5 sm:px-5 py-1.5 sm:py-2 text-[11px] sm:text-sm font-condensed uppercase tracking-wider font-bold text-white bg-[#F9000E] hover:bg-[#D6000C] active:scale-[0.98] rounded-full shadow-superhi-sm hover:shadow-superhi transition-all whitespace-nowrap cursor-pointer shrink-0"
             >
-              <span>Save My Place — ₦20,000</span>
+              <span className="sm:hidden">Save Place · ₦20k</span>
+              <span className="hidden sm:inline">Save My Place — ₦20,000</span>
             </button>
 
             {/* Mobile Menu Toggle */}
@@ -150,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               className="md:hidden p-1.5 text-[#0B0B10] hover:text-[#F9000E] rounded-full transition-colors cursor-pointer"
             >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
@@ -159,9 +160,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
         {searchOpen && (
           <form
             onSubmit={handleSearchSubmit}
-            className="mt-2 bg-white border border-[#0B0B10]/15 rounded-3xl p-3 shadow-superhi flex items-center gap-2 animate-in fade-in duration-150"
+            className="mt-2 bg-white border border-[#0B0B10]/15 rounded-3xl p-2.5 sm:p-3 shadow-superhi flex items-center gap-2 animate-in fade-in duration-150"
           >
-            <Search size={18} className="text-[#4F4F60] ml-2 shrink-0" />
+            <Search size={16} className="text-[#4F4F60] ml-2 shrink-0" />
             <input
               type="text"
               autoFocus
@@ -172,7 +173,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
             />
             <button
               type="submit"
-              className="px-4 py-1.5 bg-[#0B0B10] text-white text-xs font-condensed uppercase font-bold rounded-full hover:bg-[#222] transition-colors shrink-0"
+              className="px-3 sm:px-4 py-1.5 bg-[#0B0B10] text-white text-[11px] sm:text-xs font-condensed uppercase font-bold rounded-full hover:bg-[#222] transition-colors shrink-0"
             >
               Search
             </button>
@@ -181,22 +182,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
               onClick={() => setSearchOpen(false)}
               className="p-1 text-[#4F4F60] hover:text-[#0B0B10] rounded-full"
             >
-              <X size={16} />
+              <X size={15} />
             </button>
           </form>
         )}
 
         {/* Mobile Navigation Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-2 border border-[#0B0B10]/15 bg-[#FFFFFF] rounded-3xl p-6 shadow-superhi-lg animate-in fade-in duration-150">
-            <nav className="flex flex-col gap-4 text-base font-condensed uppercase tracking-wider font-semibold text-[#0B0B10]">
+          <div className="md:hidden mt-2 border border-[#0B0B10]/15 bg-[#FFFFFF] rounded-2xl p-5 shadow-superhi-lg animate-in fade-in duration-150">
+            <nav className="flex flex-col gap-3.5 text-sm sm:text-base font-condensed uppercase tracking-wider font-semibold text-[#0B0B10]">
               <a
                 href="#how-it-works"
                 onClick={(e) => handleNavClick(e, 'how-it-works')}
                 className="py-1 hover:text-[#F9000E] transition-colors flex items-center justify-between"
               >
                 <span>How It Works</span>
-                <ArrowRight size={16} className="text-[#4F4F60]" />
+                <ArrowRight size={15} className="text-[#4F4F60]" />
               </a>
               <a
                 href="#what-you-get"
@@ -204,7 +205,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                 className="py-1 hover:text-[#F9000E] transition-colors flex items-center justify-between"
               >
                 <span>What&apos;s Included (₦20,000 Pass)</span>
-                <ArrowRight size={16} className="text-[#4F4F60]" />
+                <ArrowRight size={15} className="text-[#4F4F60]" />
               </a>
               <a
                 href="#why-pods"
@@ -212,7 +213,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                 className="py-1 hover:text-[#F9000E] transition-colors flex items-center justify-between"
               >
                 <span>Why 10-Person Pods</span>
-                <ArrowRight size={16} className="text-[#4F4F60]" />
+                <ArrowRight size={15} className="text-[#4F4F60]" />
               </a>
               <a
                 href="#faqs"
@@ -220,7 +221,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                 className="py-1 hover:text-[#F9000E] transition-colors flex items-center justify-between"
               >
                 <span>Frequently Asked Questions</span>
-                <ArrowRight size={16} className="text-[#4F4F60]" />
+                <ArrowRight size={15} className="text-[#4F4F60]" />
               </a>
               <div className="pt-2 border-t border-[#0B0B10]/10">
                 <button
@@ -229,7 +230,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onClaimSeat }) => {
                     setMobileMenuOpen(false);
                     onClaimSeat();
                   }}
-                  className="w-full py-3.5 text-center text-sm font-condensed uppercase tracking-wider font-bold text-white bg-[#F9000E] hover:bg-[#D6000C] rounded-full shadow-superhi cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full py-3 text-center text-sm font-condensed uppercase tracking-wider font-bold text-white bg-[#F9000E] hover:bg-[#D6000C] rounded-full shadow-superhi cursor-pointer flex items-center justify-center gap-2"
                 >
                   <span>Save My Place — ₦20,000</span>
                 </button>
